@@ -277,6 +277,11 @@
     [self setNeedsDisplay];
 }
 
+- (void)reset {
+	confirmed = NO;
+	[self cancel];
+}
+
 - (void)darken{
     darkenLayer = [CALayer layer];
     darkenLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));

@@ -36,5 +36,6 @@ typedef enum {
 - (void)disableWithTitle:(NSString *)disabledString;
 - (void)setAnchor:(CGPoint)anchor;
 - (void)setTintColor:(UIColor *)color;
+- (void)reset;
 
 @end
