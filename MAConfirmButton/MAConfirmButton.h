@@ -11,23 +11,15 @@
 @class MAConfirmButtonOverlay;
 
 typedef enum {
-  MAConfirmButtonToggleAnimationLeft = 0,
-  MAConfirmButtonToggleAnimationRight = 1,
-  MAConfirmButtonToggleAnimationCenter =2
-
+  MAConfirmButtonToggleAnimationLeft,
+  MAConfirmButtonToggleAnimationRight,
+  MAConfirmButtonToggleAnimationCenter
 } MAConfirmButtonToggleAnimation;
 
-@interface MAConfirmButton : UIButton {
-
-@private
-	BOOL selected;
-	BOOL confirmed;
-	CALayer *colorLayer;
-	CALayer *darkenLayer;
-	UIButton *cancelOverlay;
-}
+@interface MAConfirmButton : UIButton 
 
 @property (nonatomic, assign) MAConfirmButtonToggleAnimation toggleAnimation;
+@property (nonatomic, assign) BOOL isSelected;
 
 + (MAConfirmButton *)buttonWithTitle:(NSString *)titleString confirm:(NSString *)confirmString;
 + (MAConfirmButton *)buttonWithDisabledTitle:(NSString *)disabledString;
@@ -36,6 +28,5 @@ typedef enum {
 - (void)disableWithTitle:(NSString *)disabledString;
 - (void)setAnchor:(CGPoint)anchor;
 - (void)setTintColor:(UIColor *)color;
-- (void)reset;
 
 @end
